@@ -43,9 +43,17 @@ parameters:
     default: es_user
 
   es_version:
-    description: Version of Elasticsearch to deploy
+    label: Elasticsearch version
+    description: |
+      Version of Elasticsearch to install.
     type: string
-    default: "1.4.3"
+    default: 2.3.4
+    constraints:
+    - allowed_values:
+      - 2.3.4
+      - 2.3.5
+      - 2.4.4
+      - 5.2.2
 
   stack_id:
     description: Stack ID
@@ -61,7 +69,11 @@ parameters:
     label: Chef Version
     description: Version of chef client to use
     type: string
-    default: 12.3.0
+    default: 12.12.15
+    constraints:
+    - allowed_values:
+      - 12.12.15
+      - 12.19.36
 
 resources:
 
