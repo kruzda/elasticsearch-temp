@@ -9,7 +9,7 @@ parameters:
     label: Server Image
     description: Operating system to use for your server.
     type: string
-    default: Ubuntu 14.04 LTS (Trusty Tahr) (PVHVM)
+    default: Ubuntu 16.04 LTS (Xenial Xerus) (PVHVM)
 
   flavor:
     description: Flavor for Cloud Servers
