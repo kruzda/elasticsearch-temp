@@ -7,10 +7,10 @@
 # All rights reserved - Do Not Redistribute
 #
 
-node.set[:java][:install_flavor] = 'openjdk'
 node.set[:java][:jdk_version] = 8
 
 include_recipe 'java'
+
 
 # find the first ipv4 address of the cloud network interface
 cn_interface_ipv4 = node[:network][:interfaces][:eth2][:addresses].find \
@@ -46,5 +46,5 @@ firewall_rule 'ssh' do
 end
 
 
-include_recipe 'elasticsearch::default'
-include_recipe 'elasticsearch::proxy'
+include_recipe 'cookbook-elasticsearch::default'
+include_recipe 'cookbook-elasticsearch::proxy'
