@@ -8,7 +8,7 @@
 #
 
 node.set[:java][:install_flavor] = 'openjdk'
-node.set[:java][:jdk_version] = 9
+node.set[:java][:jdk_version] = 8
 
 include_recipe 'java'
 
