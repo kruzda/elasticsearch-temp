@@ -73,7 +73,7 @@ parameters:
     description: |
       Version of Elasticsearch to install.
     type: string
-    default: 2.3.4
+    default: 5.2.2
     constraints:
     - allowed_values:
       - 2.3.4
@@ -98,7 +98,7 @@ parameters:
     label: Chef Version
     description: Version of chef client to use
     type: string
-    default: 12.12.15
+    default: 12.19.36
     constraints:
     - allowed_values:
       - 12.12.15
