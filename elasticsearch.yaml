@@ -25,7 +25,7 @@ parameter_groups:
   - chef_version
 
 parameters:
-
+    
   flavor:
     label: Server Size
     description: |
@@ -56,10 +56,6 @@ parameters:
         - 240 GB Memory v1
         - 30 GB Memory v1
         - 60 GB Memory v1
-        - OnMetal General Purpose v2 Large
-        - OnMetal General Purpose v2 Medium
-        - OnMetal General Purpose v2 Small
-        - OnMetal I/O v2
         - 4 GB Performance
         - 8 GB Performance
         - 120 GB Performance
