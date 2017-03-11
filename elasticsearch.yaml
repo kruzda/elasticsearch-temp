@@ -32,11 +32,41 @@ parameters:
       Rackspace Cloud Server flavor to use. The size is based on the amount of
       RAM for the provisioned server.
     type: string
-    default: general1-4
+    default: 4 GB General Purpose v1
     constraints:
     - allowed_values:
-      - general1-4
-      - general1-8
+        - 4GB Standard Instance
+        - 8GB Standard Instance
+        - 15GB Standard Instance
+        - 30GB Standard Instance
+        - 15 GB Compute v1
+        - 30 GB Compute v1
+        - 3.75 GB Compute v1
+        - 60 GB Compute v1
+        - 7.5 GB Compute v1
+        - 4 GB General Purpose v1
+        - 8 GB General Purpose v1
+        - 120 GB I/O v1
+        - 15 GB I/O v1
+        - 30 GB I/O v1
+        - 60 GB I/O v1
+        - 90 GB I/O v1
+        - 120 GB Memory v1
+        - 15 GB Memory v1
+        - 240 GB Memory v1
+        - 30 GB Memory v1
+        - 60 GB Memory v1
+        - OnMetal General Purpose v2 Large
+        - OnMetal General Purpose v2 Medium
+        - OnMetal General Purpose v2 Small
+        - OnMetal I/O v2
+        - 4 GB Performance
+        - 8 GB Performance
+        - 120 GB Performance
+        - 15 GB Performance
+        - 30 GB Performance
+        - 60 GB Performance
+        - 90 GB Performance
       description: |
         Must be a valid Rackspace Cloud Server flavor for the region you have
         selected to deploy into.
