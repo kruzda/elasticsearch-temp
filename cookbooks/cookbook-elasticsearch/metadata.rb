@@ -15,7 +15,7 @@ supports 'redhat'
 supports 'ubuntu'
 
 depends 'apt'
-depends 'yum'
+#depends 'yum'
 depends 'chef-sugar'
 depends 'ark'
 
