@@ -20,8 +20,7 @@ Chef::Log.info("print interface ip is #{cn_interface_ipv4}")
 
 node.set[:elasticsearch][:custom_config] = {
   'network.host' => cn_interface_ipv4,
-  'discovery.zen.ping.unicast.hosts' => '192.168.134.1',
-  'discovery.zen.ping.multicast.address' => cn_interface_ipv4
+  'discovery.zen.ping.unicast.hosts' => '192.168.134.1'
   }
 
 include_recipe 'firewall::default'

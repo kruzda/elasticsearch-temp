@@ -6,3 +6,6 @@
 #
 <% require 'yaml' %>
 <%= @config.to_yaml.to_s %>
+<% node.elasticsearch[:custom_config].sort.each do |key, value| %>
+<%= key %>: <%= value %>
+<% end %>
