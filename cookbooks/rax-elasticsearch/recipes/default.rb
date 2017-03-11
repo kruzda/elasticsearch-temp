@@ -46,5 +46,4 @@ firewall_rule 'ssh' do
 end
 
 
-include_recipe 'cookbook-elasticsearch::default'
-include_recipe 'cookbook-elasticsearch::proxy'
+include_recipe 'elasticsearch::default'
