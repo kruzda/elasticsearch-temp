@@ -10,7 +10,8 @@ parameter_groups:
   parameters:
   - flavor
   - es_node_count
-
+  - server_hostname
+  
 - label: Elasticsearch Settings
   parameters:
   - es_auth_user
@@ -19,7 +20,6 @@ parameter_groups:
 - label: rax-dev-params
   parameters:
   - load_balancer_hostname
-  - server_hostname
   - child_template
   - kitchen
   - chef_version
@@ -35,6 +35,9 @@ parameters:
     default: 4 GB General Purpose v1
     constraints:
     - allowed_values:
+        - 512MB Standard Instance
+        - 1GB Standard Instance
+        - 2GB Standard Instance
         - 4GB Standard Instance
         - 8GB Standard Instance
         - 15GB Standard Instance
@@ -44,6 +47,8 @@ parameters:
         - 3.75 GB Compute v1
         - 60 GB Compute v1
         - 7.5 GB Compute v1
+        - 1 GB General Purpose v1
+        - 2 GB General Purpose v1
         - 4 GB General Purpose v1
         - 8 GB General Purpose v1
         - 120 GB I/O v1
@@ -56,6 +61,8 @@ parameters:
         - 240 GB Memory v1
         - 30 GB Memory v1
         - 60 GB Memory v1
+        - 1 GB Performance
+        - 2 GB Performance
         - 4 GB Performance
         - 8 GB Performance
         - 120 GB Performance
@@ -63,6 +70,7 @@ parameters:
         - 30 GB Performance
         - 60 GB Performance
         - 90 GB Performance
+
       description: |
         Must be a valid Rackspace Cloud Server flavor for the region you have
         selected to deploy into.
@@ -77,7 +85,7 @@ parameters:
     label: Server Name
     description: Hostname for the servers
     type: string
-    default: elasticsearch-%index%
+    default: elasticsearch
 
   es_node_count:
     label: Number of Servers
@@ -177,7 +185,11 @@ resources:
         properties:
           stack_id:         { get_param: "OS::stack_id" }
           flavor:           { get_param: flavor }
-          server_hostname:  { get_param: server_hostname }
+          server_hostname:
+            str_replace:
+              template: hostname%-%index%
+              params:
+                "hostname%": { get_param: server_hostname }
           ssh_keypair_name: { get_resource: ssh_key }
           ssh_private_key:  { get_attr: [ssh_key, private_key] }
           es_network_id:    { get_resource: es_network }
