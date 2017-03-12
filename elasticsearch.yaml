@@ -35,7 +35,6 @@ parameters:
     default: 4 GB General Purpose v1
     constraints:
     - allowed_values:
-        - 512MB Standard Instance
         - 1GB Standard Instance
         - 2GB Standard Instance
         - 4GB Standard Instance
@@ -116,13 +115,13 @@ parameters:
     description: |
       URL to the Child template that will provision Elasticsearch nodes.
     type: string
-    default: https://raw.githubusercontent.com/kruzda/elasticsearch/master/elasticsearch_node.yaml
+    default: https://raw.githubusercontent.com/kruzda/elasticsearch-temp/master/elasticsearch_node.yaml
 
   kitchen:
     label: Kitchen
     description: URL for the kitchen to use
     type: string
-    default: https://github.com/kruzda/elasticsearch
+    default: https://github.com/kruzda/elasticsearch-temp
 
   chef_version:
     label: Chef Version
